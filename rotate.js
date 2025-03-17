@@ -1,4 +1,4 @@
-const stepSize = 5;
+let stepSize = 5;
 
 const iframe = document.querySelector('iframe.c-viewer__iframe');
 const canvas = iframe.contentWindow.document.querySelector('canvas.canvas');
@@ -61,7 +61,7 @@ inputStep.type = 'number'
 inputStep.min = 0
 inputStep.max = 100
 inputStep.value = stepSize
-inputStep.style = `display: inline-block; width: 30px; text-align: center;`
+inputStep.style = `display: inline-block; width: 120px; text-align: center;`
 inputStep.oninput = () => stepSize = +inputStep.value;
 canvasDiv.append(inputStep)
 
