@@ -53,6 +53,18 @@ btnResetY.innerText = 'reset y'
 btnResetY.onclick = () => y_value.innerText = 0;
 canvasDiv.append(btnResetY)
 
+canvasDiv.append(document.createElement('br'))
+canvasDiv.append(document.createElement('br'))
+
+const inputStep = document.createElement('input')
+inputStep.type = 'number'
+inputStep.min = 0
+inputStep.max = 100
+inputStep.value = stepSize
+inputStep.style = `display: inline-block; width: 30px; text-align: center;`
+inputStep.oninput = () => stepSize = +inputStep.value;
+canvasDiv.append(inputStep)
+
 function simulateCanvasDrag(startX, startY, endX, endY) {
     if (startX !== endX) x_value.innerText = +x_value.innerText + (startX - endX);
     else y_value.innerText = +y_value.innerText + (startY - endY);
